@@ -12,7 +12,7 @@ public class Main {
                 final ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
                 final DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
                 final double[] arr = (double[]) ois.readObject();
-                final int result = Calc.calculateUnics(arr);
+                final int result = Calc.calculateAbsUnics(arr); //Calc.calculateUnics(arr);
                 dos.writeInt(result);
                 dos.flush();
             } catch (ClassNotFoundException e) {
